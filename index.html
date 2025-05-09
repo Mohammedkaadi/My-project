@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة الكعدي - حجز تاكسي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- الصفحة الرئيسية -->
+    <header>
+        <h1>شركة الكعدي - خدمة حجز التاكسي</h1>
+        <p>اطلب تاكسي بسهولة من شركة الكعدي أينما كنت!</p>
+    </header>
+
+    <!-- نموذج حجز التاكسي -->
+    <section class="booking-form">
+        <form id="taxi-booking-form">
+            <label for="current-location">الموقع الحالي</label>
+            <input type="text" id="current-location" name="current-location" placeholder="أدخل موقعك الحالي" required>
+
+            <label for="destination">الوجهة</label>
+            <input type="text" id="destination" name="destination" placeholder="أدخل وجهتك" required>
+
+            <label for="phone">رقم الهاتف</label>
+            <input type="tel" id="phone" name="phone" placeholder="أدخل رقم هاتفك" required pattern="[0-9]{10}">
+
+            <label for="car-type">نوع السيارة</label>
+            <select id="car-type" name="car-type">
+                <option value="standard">سيارة عادية</option>
+                <option value="luxury">سيارة فاخرة</option>
+            </select>
+
+            <label for="time">حدد الوقت</label>
+            <input type="datetime-local" id="time" name="time" required>
+
+            <button type="submit" id="submit-button">حجز التاكسي</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
