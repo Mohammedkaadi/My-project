@@ -5,152 +5,290 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>محمد كعدي - ملف شخصي</title>
 
-  <!-- استيراد خط Cairo -->
+  <!-- خط Cairo -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
 
-  <!-- استيراد Font Awesome -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-pVtQq1bG2rx1ErkX5vl9Thp+LcNj8N+OX7+R1xzPlRHY7Xb0kKs7TlwB5pAdUlMGZtk3ErjL0bjrKqZGlH+BNQ=="
     crossorigin="anonymous"
-    referrerpolicy="no-referrer"
   />
 
   <style>
-    body {
+    /* Reset */
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Cairo', sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
-      line-height: 1.6;
+      background: linear-gradient(135deg, #eef2f3, #8e9eab);
+      color: #222;
+      line-height: 1.7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     header {
-      background-color: #2c3e50;
-      color: #ecf0f1;
-      padding: 30px 20px;
+      background: linear-gradient(90deg, #2980b9, #6dd5fa);
+      color: #fff;
+      padding: 40px 20px;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      border-radius: 0 0 25px 25px;
+      user-select: none;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      letter-spacing: 2px;
+      font-size: 3rem;
+      letter-spacing: 4px;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    header p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      opacity: 0.9;
+      letter-spacing: 1px;
     }
 
     .container {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width: 960px;
+      margin: 40px auto 60px;
+      padding: 0 25px;
+      flex-grow: 1;
     }
 
     section {
-      margin-bottom: 50px;
+      margin-bottom: 60px;
     }
 
     section h2 {
-      border-bottom: 3px solid #2980b9;
-      display: inline-block;
-      padding-bottom: 5px;
-      margin-bottom: 20px;
+      font-size: 2rem;
       color: #2980b9;
+      margin-bottom: 25px;
+      border-bottom: 4px solid #2980b9;
+      display: inline-block;
+      padding-bottom: 8px;
+      letter-spacing: 1.2px;
+      font-weight: 700;
     }
 
     #about p {
-      font-size: 1.2rem;
-      color: #555;
+      font-size: 1.25rem;
+      color: #444;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
     }
 
     #skills ul {
       list-style: none;
-      padding: 0;
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      justify-content: center;
+      gap: 18px;
     }
 
     #skills ul li {
       background: #3498db;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 25px;
-      font-weight: bold;
-      box-shadow: 0 2px 5px rgba(52,152,219,0.5);
-      flex: 1 1 120px;
-      text-align: center;
+      background: linear-gradient(135deg, #2980b9, #3498db);
+      color: #fff;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      box-shadow: 0 6px 12px rgba(52, 152, 219, 0.6);
+      font-size: 1.1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      user-select: none;
+    }
+
+    #skills ul li:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(41, 128, 185, 0.9);
     }
 
     #projects .project {
-      background: white;
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin-bottom: 20px;
-      transition: transform 0.3s ease;
+      background: #fff;
+      border-radius: 15px;
+      padding: 30px 25px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
     }
 
     #projects .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.18);
     }
 
     #projects .project h3 {
-      margin-top: 0;
       color: #2980b9;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
 
     #projects .project p {
-      color: #666;
+      color: #555;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      line-height: 1.5;
     }
 
     #projects .project a {
-      color: #2980b9;
+      color: #fff;
+      background: #2980b9;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      padding: 12px 25px;
+      border-radius: 35px;
+      box-shadow: 0 6px 15px rgba(41, 128, 185, 0.8);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      user-select: none;
     }
 
     #projects .project a:hover {
-      text-decoration: underline;
+      background-color: #1c5980;
+      box-shadow: 0 8px 25px rgba(28, 89, 128, 0.9);
+      text-decoration: none;
+    }
+
+    #projects .project a i {
+      font-size: 1.3rem;
     }
 
     #contact {
       text-align: center;
+      margin-bottom: 40px;
+    }
+
+    #contact h2 {
+      margin-bottom: 30px;
     }
 
     #contact a {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin: 10px 15px;
+      gap: 12px;
+      margin: 12px 20px;
       color: #2980b9;
-      font-weight: bold;
+      font-weight: 700;
       text-decoration: none;
-      border: 2px solid #2980b9;
-      padding: 10px 20px;
-      border-radius: 30px;
-      transition: background-color 0.3s, color 0.3s;
-      font-size: 1.1rem;
+      border: 3px solid #2980b9;
+      padding: 14px 30px;
+      border-radius: 40px;
+      font-size: 1.2rem;
+      background-color: #fff;
+      box-shadow: 0 6px 20px rgba(41,128,185,0.3);
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      cursor: pointer;
     }
 
     #contact a:hover {
       background-color: #2980b9;
-      color: white;
+      color: #fff;
+      box-shadow: 0 8px 25px rgba(41,128,185,0.8);
+      text-decoration: none;
+    }
+
+    #contact a i {
+      font-size: 1.5rem;
     }
 
     /* تجاوب */
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+
+      #skills ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      #skills ul li {
+        flex: 1 1 140px;
+      }
+
+      #projects .project {
+        padding: 25px 20px;
+      }
+
+      #projects .project h3 {
+        font-size: 1.5rem;
+      }
+
+      #projects .project p {
+        font-size: 1rem;
+      }
+
+      #projects .project a {
+        font-size: 1rem;
+        padding: 10px 22px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        margin: 30px 15px 50px;
+        padding: 0 15px;
+      }
+
       header h1 {
         font-size: 2rem;
       }
 
+      header p {
+        font-size: 1.1rem;
+      }
+
       #skills ul {
         flex-direction: column;
+        gap: 12px;
       }
 
       #skills ul li {
         flex: 1 1 100%;
+        padding: 12px 0;
+      }
+
+      #projects .project {
+        padding: 20px 15px;
+      }
+
+      #projects .project h3 {
+        font-size: 1.3rem;
+      }
+
+      #projects .project p {
+        font-size: 0.95rem;
+      }
+
+      #projects .project a {
+        font-size: 0.95rem;
+        padding: 9px 18px;
+      }
+
+      #contact a {
+        font-size: 1rem;
+        padding: 12px 25px;
+        margin: 10px 10px;
       }
     }
   </style>
@@ -166,7 +304,7 @@
 
   <section id="about">
     <h2>نبذة عني</h2>
-    <p>مرحبًا! أنا محمد كعدي، مطور ويب شغوف بتقديم حلول مبتكرة وتصميم مواقع عصرية وسهلة الاستخدام.</p>
+    <p>مرحبًا! أنا محمد كعدي، مطور ويب شغوف بابتكار حلول تقنية حديثة وتصميم تجارب مستخدم مميزة وسلسة عبر الويب.</p>
   </section>
 
   <section id="skills">
@@ -186,19 +324,33 @@
     <div class="project">
       <h3>موقعي الشخصي</h3>
       <p>موقع تعريفي بسيط يعرض ملفي الشخصي ومهاراتي ومشاريعي باستخدام HTML وCSS.</p>
-      <a href="https://mohammedkaadi.github.io/mohammedkaadi/" target="_blank" rel="noopener">زيارة المشروع</a>
+      <a href="https://mohammedkaadi.github.io/mohammedkaadi/" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> زيارة المشروع
+      </a>
     </div>
 
     <div class="project">
       <h3>موقع مكتب هندسي</h3>
       <p>موقع تعريفي لمكتب هندسي يتضمن عرض خدمات المكتب باستخدام تصميم حديث ومتجاوب.</p>
-      <a href="https://tariqzweun.github.io/engineering-office/" target="_blank" rel="noopener">زيارة المشروع</a>
+      <a href="https://tariqzweun.github.io/engineering-office/" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> زيارة المشروع
+      </a>
     </div>
 
     <div class="project">
       <h3>موقع ويب إدارة الأموال (My Wallet)</h3>
       <p>موقع ويب يساعد على تتبع وإدارة الميزانية الشخصية بسهولة، مع إمكانية تسجيل المصاريف والدخل وتصنيف النفقات وعرض تقارير مالية.</p>
-      <a href="https://mohammedkaadi.github.io/My-Wallet/" target="_blank" rel="noopener">زيارة المشروع</a>
+      <a href="https://mohammedkaadi.github.io/My-Wallet/" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> زيارة المشروع
+      </a>
+    </div>
+
+    <div class="project">
+      <h3>Delevery</h3>
+      <p>منصة توصيل متكاملة تسهّل طلب واستلام الخدمات والمنتجات بسرعة وسلاسة عبر واجهة مستخدم بسيطة وحديثة.</p>
+      <a href="https://mohammedkaadi.github.io/Delevery/" target="_blank" rel="noopener">
+        <i class="fas fa-external-link-alt"></i> زيارة المشروع
+      </a>
     </div>
 
   </section>
