@@ -6,7 +6,7 @@
   <title>محمد كعدي - ملف شخصي</title>
 
   <!-- خط Cairo -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link
@@ -16,7 +16,6 @@
   />
 
   <style>
-    /* Reset */
     * {
       margin: 0;
       padding: 0;
@@ -25,43 +24,72 @@
 
     body {
       font-family: 'Cairo', sans-serif;
-      background: linear-gradient(135deg, #eef2f3, #8e9eab);
+      background: #f5f7fa;
       color: #222;
       line-height: 1.7;
-      min-height: 100vh;
+    }
+
+    /* شريط التنقل */
+    nav {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      background: rgba(42, 73, 152, 0.95);
+      padding: 15px 30px;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+    }
+
+    nav h2 {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffd700;
     }
 
     header {
-      background: linear-gradient(90deg, #2980b9, #6dd5fa);
+      background: linear-gradient(120deg, #6a11cb, #2575fc);
       color: #fff;
-      padding: 40px 20px;
+      padding: 120px 20px 80px;
       text-align: center;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      border-radius: 0 0 25px 25px;
-      user-select: none;
+      border-radius: 0 0 50px 50px;
+      margin-bottom: 60px;
     }
 
     header h1 {
-      font-size: 3rem;
-      letter-spacing: 4px;
+      font-size: 2.8rem;
       margin-bottom: 10px;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
     header p {
       font-size: 1.3rem;
-      font-weight: 600;
       opacity: 0.9;
-      letter-spacing: 1px;
     }
 
     .container {
-      max-width: 960px;
-      margin: 40px auto 60px;
-      padding: 0 25px;
-      flex-grow: 1;
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px 60px;
     }
 
     section {
@@ -70,23 +98,23 @@
 
     section h2 {
       font-size: 2rem;
-      color: #2980b9;
+      color: #2575fc;
       margin-bottom: 25px;
-      border-bottom: 4px solid #2980b9;
+      border-bottom: 4px solid #2575fc;
       display: inline-block;
       padding-bottom: 8px;
-      letter-spacing: 1.2px;
       font-weight: 700;
     }
 
     #about p {
       font-size: 1.25rem;
       color: #444;
-      max-width: 700px;
+      max-width: 750px;
       margin: auto;
-      line-height: 1.6;
+      text-align: center;
     }
 
+    /* المهارات */
     #skills ul {
       list-style: none;
       display: flex;
@@ -96,17 +124,14 @@
     }
 
     #skills ul li {
-      background: #3498db;
       background: linear-gradient(135deg, #2980b9, #3498db);
       color: #fff;
       padding: 12px 28px;
       border-radius: 40px;
       font-weight: 700;
-      box-shadow: 0 6px 12px rgba(52, 152, 219, 0.6);
       font-size: 1.1rem;
+      box-shadow: 0 6px 12px rgba(52, 152, 219, 0.6);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
-      user-select: none;
     }
 
     #skills ul li:hover {
@@ -114,186 +139,137 @@
       box-shadow: 0 8px 20px rgba(41, 128, 185, 0.9);
     }
 
+    /* شبكة المشاريع */
+    #projects .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
     #projects .project {
       background: #fff;
       border-radius: 15px;
-      padding: 30px 25px;
+      padding: 25px 20px;
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      margin-bottom: 30px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      overflow: hidden;
-      cursor: default;
     }
 
     #projects .project:hover {
-      transform: translateY(-8px);
+      transform: translateY(-8px) scale(1.02);
       box-shadow: 0 15px 30px rgba(0,0,0,0.18);
     }
 
     #projects .project h3 {
       color: #2980b9;
-      font-size: 1.8rem;
-      margin-bottom: 15px;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
       font-weight: 700;
-      letter-spacing: 1px;
     }
 
     #projects .project p {
       color: #555;
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      line-height: 1.5;
+      font-size: 1rem;
+      margin-bottom: 18px;
     }
 
     #projects .project a {
       color: #fff;
-      background: #2980b9;
+      background: #2575fc;
       text-decoration: none;
       font-weight: 600;
-      padding: 12px 25px;
+      padding: 10px 20px;
       border-radius: 35px;
-      box-shadow: 0 6px 15px rgba(41, 128, 185, 0.8);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 15px rgba(37,117,252,0.8);
+      transition: background-color 0.3s ease;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      font-size: 1.1rem;
-      user-select: none;
+      gap: 8px;
     }
 
     #projects .project a:hover {
-      background-color: #1c5980;
-      box-shadow: 0 8px 25px rgba(28, 89, 128, 0.9);
-      text-decoration: none;
+      background-color: #1b4f99;
     }
 
-    #projects .project a i {
-      font-size: 1.3rem;
-    }
-
+    /* تواصل */
     #contact {
       text-align: center;
-      margin-bottom: 40px;
-    }
-
-    #contact h2 {
-      margin-bottom: 30px;
     }
 
     #contact a {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      margin: 12px 20px;
-      color: #2980b9;
+      gap: 10px;
+      margin: 12px;
+      color: #2575fc;
       font-weight: 700;
       text-decoration: none;
-      border: 3px solid #2980b9;
-      padding: 14px 30px;
+      border: 2px solid #2575fc;
+      padding: 12px 25px;
       border-radius: 40px;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       background-color: #fff;
-      box-shadow: 0 6px 20px rgba(41,128,185,0.3);
-      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
-      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(37,117,252,0.3);
+      transition: all 0.3s ease;
     }
 
     #contact a:hover {
-      background-color: #2980b9;
+      background-color: #2575fc;
       color: #fff;
-      box-shadow: 0 8px 25px rgba(41,128,185,0.8);
-      text-decoration: none;
     }
 
-    #contact a i {
-      font-size: 1.5rem;
+    /* زر العودة للأعلى */
+    #toTop {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #2575fc;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      padding: 12px 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      display: none;
+      transition: background 0.3s;
+      z-index: 999;
+    }
+
+    #toTop:hover {
+      background: #1b4f99;
     }
 
     /* تجاوب */
     @media (max-width: 768px) {
       header h1 {
-        font-size: 2.5rem;
-      }
-
-      #skills ul {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      #skills ul li {
-        flex: 1 1 140px;
-      }
-
-      #projects .project {
-        padding: 25px 20px;
-      }
-
-      #projects .project h3 {
-        font-size: 1.5rem;
-      }
-
-      #projects .project p {
-        font-size: 1rem;
-      }
-
-      #projects .project a {
-        font-size: 1rem;
-        padding: 10px 22px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        margin: 30px 15px 50px;
-        padding: 0 15px;
-      }
-
-      header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
       }
 
       header p {
         font-size: 1.1rem;
       }
 
-      #skills ul {
-        flex-direction: column;
+      nav ul {
         gap: 12px;
       }
 
-      #skills ul li {
-        flex: 1 1 100%;
-        padding: 12px 0;
-      }
-
-      #projects .project {
-        padding: 20px 15px;
-      }
-
-      #projects .project h3 {
-        font-size: 1.3rem;
-      }
-
-      #projects .project p {
-        font-size: 0.95rem;
-      }
-
-      #projects .project a {
-        font-size: 0.95rem;
-        padding: 9px 18px;
-      }
-
-      #contact a {
+      nav h2 {
         font-size: 1rem;
-        padding: 12px 25px;
-        margin: 10px 10px;
       }
     }
   </style>
 </head>
 <body>
+
+<!-- شريط التنقل -->
+<nav>
+  <h2>محمد كعدي</h2>
+  <ul>
+    <li><a href="#about">نبذة</a></li>
+    <li><a href="#skills">مهاراتي</a></li>
+    <li><a href="#projects">مشاريعي</a></li>
+    <li><a href="#contact">تواصل</a></li>
+  </ul>
+</nav>
 
 <header>
   <h1>محمد كعدي</h1>
@@ -301,7 +277,6 @@
 </header>
 
 <div class="container">
-
   <section id="about">
     <h2>نبذة عني</h2>
     <p>مرحبًا! أنا محمد كعدي، مطور ويب شغوف بابتكار حلول تقنية حديثة وتصميم تجارب مستخدم مميزة وسلسة عبر الويب.</p>
@@ -310,60 +285,78 @@
   <section id="skills">
     <h2>مهاراتي</h2>
     <ul>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>React</li>
-      <li>Git & GitHub</li>
+      <li><i class="fab fa-html5"></i> HTML</li>
+      <li><i class="fab fa-css3-alt"></i> CSS</li>
+      <li><i class="fab fa-js"></i> JavaScript</li>
+      <li><i class="fab fa-react"></i> React</li>
+      <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
     </ul>
   </section>
 
   <section id="projects">
-  <h2>مشاريعي</h2>
+    <h2>مشاريعي</h2>
+    <div class="projects-grid">
+      <div class="project">
+        <h3>موقعي الشخصي</h3>
+        <p>موقع تعريفي بسيط يعرض ملفي الشخصي ومهاراتي ومشاريعي باستخدام HTML وCSS.</p>
+        <a href="https://mohammedkaadi.github.io/mohammedkaadi/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
+      </div>
 
-  <div class="project">
-    <h3>موقعي الشخصي</h3>
-    <p>موقع تعريفي بسيط يعرض ملفي الشخصي ومهاراتي ومشاريعي باستخدام HTML وCSS.</p>
-    <a href="https://mohammedkaadi.github.io/mohammedkaadi/" target="_blank" rel="noopener">
-      <i class="fas fa-external-link-alt"></i> زيارة المشروع
-    </a>
-  </div>
+      <div class="project">
+        <h3>موقع مكتب هندسي</h3>
+        <p>موقع تعريفي لمكتب هندسي يتضمن عرض خدمات المكتب باستخدام تصميم حديث ومتجاوب.</p>
+        <a href="https://tariqzweun.github.io/engineering-office/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
+      </div>
 
-  <div class="project">
-    <h3>موقع مكتب هندسي</h3>
-    <p>موقع تعريفي لمكتب هندسي يتضمن عرض خدمات المكتب باستخدام تصميم حديث ومتجاوب.</p>
-    <a href="https://tariqzweun.github.io/engineering-office/" target="_blank" rel="noopener">
-      <i class="fas fa-external-link-alt"></i> زيارة المشروع
-    </a>
-  </div>
+      <div class="project">
+        <h3>My Wallet</h3>
+        <p>موقع ويب يساعد على تتبع وإدارة الميزانية الشخصية بسهولة.</p>
+        <a href="https://mohammedkaadi.github.io/My-Wallet/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
+      </div>
 
-  <div class="project">
-    <h3>موقع ويب إدارة الأموال (My Wallet)</h3>
-    <p>موقع ويب يساعد على تتبع وإدارة الميزانية الشخصية بسهولة، مع إمكانية تسجيل المصاريف والدخل وتصنيف النفقات وعرض تقارير مالية.</p>
-    <a href="https://mohammedkaadi.github.io/My-Wallet/" target="_blank" rel="noopener">
-      <i class="fas fa-external-link-alt"></i> زيارة المشروع
-    </a>
-  </div>
-   <div class="project">
-  <h3>Starcola</h3>
-  <p>موقع لإدارة عمليات البيع والشراء لشركة ستار كولا، يتيح متابعة المخزون وحساب الأرباح بشكل دقيق وسهل.</p>
-  <a href="https://mohammedkaadi.github.io/Starcola" target="_blank" rel="noopener">
-    <i class="fas fa-external-link-alt"></i> زيارة المشروع
-  </a>
-   </div>
-</section>
+      <div class="project">
+        <h3>Starcola</h3>
+        <p>موقع لإدارة عمليات البيع والشراء لشركة ستار كولا.</p>
+        <a href="https://mohammedkaadi.github.io/Starcola" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
+      </div>
+    </div>
+  </section>
 
   <section id="contact">
     <h2>تواصل معي</h2>
-    <a href="https://wa.me/963980351186" target="_blank" rel="noopener">
-      <i class="fab fa-whatsapp"></i> واتساب
-    </a>
-    <a href="https://www.facebook.com/share/16XuMVmWYp/" target="_blank" rel="noopener">
-      <i class="fab fa-facebook-f"></i> فيسبوك
-    </a>
+    <a href="https://wa.me/963980351186" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
+    <a href="https://www.facebook.com/share/16XuMVmWYp/" target="_blank"><i class="fab fa-facebook-f"></i> فيسبوك</a>
   </section>
-
 </div>
+
+<!-- زر العودة للأعلى -->
+<button id="toTop"><i class="fas fa-arrow-up"></i></button>
+
+<script>
+  // إظهار/إخفاء زر العودة للأعلى
+  const toTop = document.getElementById("toTop");
+  window.onscroll = () => {
+    if (document.documentElement.scrollTop > 300) {
+      toTop.style.display = "block";
+    } else {
+      toTop.style.display = "none";
+    }
+  };
+
+  // حركة العودة للأعلى
+  toTop.onclick = () => {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+
+  // تفعيل الـ Smooth Scroll للروابط
+  document.querySelectorAll("nav a").forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute("href"))
+        .scrollIntoView({behavior: "smooth"});
+    });
+  });
+</script>
 
 </body>
 </html>
