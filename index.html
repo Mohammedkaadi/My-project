@@ -1,161 +1,191 @@
-<!DOCTYPE html>  <html lang="ar" dir="rtl">  
-<head>  
-  <meta charset="UTF-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1" />    <!-- SEO: العنوان والوصف -->    <title>محمد كعدي - مطور ويب ومصمم واجهات</title>  
-  <meta name="description" content="محمد كعدي - مطور ويب ومصمم واجهات، متخصص في HTML, CSS, JavaScript وReact. استعرض ملفي الشخصي ومشاريعي.">  
-   <meta name="google-site-verification" content="VY-aa9fUJCOhNj0GeAzyz4ZRoEanyc6xnF7WrSdlS5U" />  
-  <!-- خط Cairo -->  
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">    <!-- Font Awesome -->    <link  
-    rel="stylesheet"  
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"  
-    crossorigin="anonymous"  
-  />    <style>  
-    * {margin:0; padding:0; box-sizing:border-box;}  
-    body {font-family:'Cairo',sans-serif; background:#f5f7fa; color:#222; line-height:1.7;}  
-    a {text-decoration:none;}  
-  
-    /* شريط التنقل */  
-    nav {  
-      position: fixed; top:0; left:0; right:0;  
-      background: rgba(42,73,152,0.95); padding:15px 30px;  
-      display:flex; justify-content:space-between; align-items:center;  
-      z-index:1000; box-shadow:0 3px 12px rgba(0,0,0,0.2);  
-    }  
-    nav h2 {color:#fff; font-weight:700; font-size:1.3rem;}  
-    nav ul {list-style:none; display:flex; gap:20px;}  
-    nav ul li a {color:#fff; font-weight:600; transition:color 0.3s;}  
-    nav ul li a:hover {color:#ffd700;}  
-  
-    header {  
-      background: linear-gradient(120deg,#6a11cb,#2575fc);  
-      color:#fff; padding:120px 20px 80px; text-align:center;  
-      border-radius:0 0 50px 50px; margin-bottom:60px;  
-    }  
-    header h1 {font-size:2.8rem; margin-bottom:10px;}  
-    header p {font-size:1.3rem; opacity:0.9;}  
-  
-    .container {max-width:1100px; margin:auto; padding:0 20px 60px;}  
-    section {margin-bottom:60px;}  
-    section h2 {font-size:2rem; color:#2575fc; margin-bottom:25px; border-bottom:4px solid #2575fc; display:inline-block; padding-bottom:8px; font-weight:700;}  
-    #about p {font-size:1.25rem; color:#444; max-width:750px; margin:auto; text-align:center;}  
-  
-    /* المهارات */  
-    #skills ul {list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:18px;}  
-    #skills ul li {background: linear-gradient(135deg, #2980b9, #3498db); color:#fff; padding:12px 28px; border-radius:40px; font-weight:700; font-size:1.1rem; box-shadow:0 6px 12px rgba(52,152,219,0.6); transition: transform 0.3s ease, box-shadow 0.3s ease;}  
-    #skills ul li:hover {transform: scale(1.1); box-shadow:0 8px 20px rgba(41,128,185,0.9);}  
-  
-    /* شبكة المشاريع */  
-    #projects .projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;}  
-    #projects .project {background:#fff; border-radius:15px; padding:25px 20px; box-shadow:0 10px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;}  
-    #projects .project:hover {transform:translateY(-8px) scale(1.02); box-shadow:0 15px 30px rgba(0,0,0,0.18);}  
-    #projects .project h3 {color:#2980b9; font-size:1.6rem; margin-bottom:12px; font-weight:700;}  
-    #projects .project p {color:#555; font-size:1rem; margin-bottom:18px;}  
-    #projects .project a {color:#fff; background:#2575fc; text-decoration:none; font-weight:600; padding:10px 20px; border-radius:35px; box-shadow:0 6px 15px rgba(37,117,252,0.8); transition: background-color 0.3s ease; display:inline-flex; align-items:center; gap:8px;}  
-    #projects .project a:hover {background-color:#1b4f99;}  
-  
-    /* تواصل */  
-    #contact {text-align:center;}  
-    #contact a {display:inline-flex; align-items:center; gap:10px; margin:12px; color:#2575fc; font-weight:700; text-decoration:none; border:2px solid #2575fc; padding:12px 25px; border-radius:40px; font-size:1.1rem; background-color:#fff; box-shadow:0 6px 20px rgba(37,117,252,0.3); transition: all 0.3s ease;}  
-    #contact a:hover {background-color:#2575fc; color:#fff;}  
-  
-    /* زر العودة للأعلى */  
-    #toTop {position:fixed; bottom:20px; left:20px; background:#2575fc; color:#fff; border:none; border-radius:50%; padding:12px 16px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.3); display:none; transition: background 0.3s; z-index:999;}  
-    #toTop:hover {background:#1b4f99;}  
-  
-    @media (max-width: 768px) {  
-      header h1 {font-size:2.2rem;}  
-      header p {font-size:1.1rem;}  
-      nav ul {gap:12px;}  
-      nav h2 {font-size:1rem;}  
-    }  
-  </style>  </head>  
-<body>  <nav>  
-  <h2>محمد كعدي</h2>  
-  <ul>  
-    <li><a href="#about">نبذة</a></li>  
-    <li><a href="#skills">مهاراتي</a></li>  
-    <li><a href="#projects">مشاريعي</a></li>  
-    <li><a href="#contact">تواصل</a></li>  
-  </ul>  
-</nav>  <header>  
-  <h1>محمد كعدي</h1>  
-  <p>مطور ويب - مصمم واجهات</p>  
-</header>  <div class="container">  
-  <section id="about">  
-    <h2>نبذة عني</h2>  
-    <p>مرحبًا! أنا محمد كعدي، مطور ويب شغوف بابتكار حلول تقنية حديثة وتصميم تجارب مستخدم مميزة وسلسة عبر الويب.</p>  
-  </section>    <section id="skills">  
-    <h2>مهاراتي</h2>  
-    <ul>  
-      <li><i class="fab fa-html5"></i> HTML</li>  
-      <li><i class="fab fa-css3-alt"></i> CSS</li>  
-      <li><i class="fab fa-js"></i> JavaScript</li>  
-      <li><i class="fab fa-react"></i> React</li>  
-      <li><i class="fab fa-git-alt"></i> Git & GitHub</li>  
-    </ul>  
-   <section id="projects">
-   <h2>مشاريعي</h2>
-   <div class="projects-grid">
-   <div class="project">
-   <h3>موقعي الشخصي</h3>
-   <p>موقع تعريفي بسيط يعرض ملفي الشخصي ومهاراتي ومشاريعي باستخدام HTML وCSS.</p>
-   <a href="https://mohammedkaadi.github.io/mohammedkaadi/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
-   </div>
-   
-   <div class="project">
-   <h3>موقع مكتب هندسي</h3>
-   <p>موقع تعريفي لمكتب هندسي يتضمن عرض خدمات المكتب باستخدام تصميم حديث ومتجاوب.</p>
-   <a href="https://tariqzweun.github.io/engineering-office/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
-   </div>
-   
-   <div class="project">
-   <h3>My Wallet</h3>
-   <p>موقع ويب يساعد على تتبع وإدارة الميزانية الشخصية بسهولة.</p>
-   <a href="https://mohammedkaadi.github.io/My-Wallet/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
-   </div>
-   
-   <div class="project">
-   <h3>Starcola</h3>
-   <p>موقع لإدارة عمليات البيع والشراء لشركة ستار كولا.</p>
-   <a href="https://mohammedkaadi.github.io/Starcola" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
-   </div>
-   
-   <!-- مشروعك الجديد -->
-   <div class="project">
-   <h3>موقع Fouad</h3>
-   <p>موقع تعريفي للطباخ فؤاد، يعرض خدماته وأعماله بطريقة عصرية وجذابة.</p>
-   <a href="https://cheffouad.github.io/Fouad/" target="_blank">
-   <i class="fas fa-external-link-alt"></i> زيارة المشروع
-   </a>
-   </div>
-   <div class="project">
-   <h3>موقع المهندسة Katia</h3>
-   <p>موقع يعرض خدمات المهندسة Katia في إدارة المشاريع الهندسية، مع عرض أعمالها ومشاريعها بطريقة احترافية وجذابة.</p>
-   <a href="https://eng-katia.github.io/katiakaadi/" target="_blank">
-   <i class="fas fa-external-link-alt"></i> زيارة المشروع
-   </a>
-   </div>
-   </div>
-   </section>
-   <section id="contact">  
-    <h2>تواصل معي</h2>  
-    <a href="https://wa.me/963980351186" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>  
-    <a href="https://www.facebook.com/share/16XuMVmWYp/" target="_blank"><i class="fab fa-facebook-f"></i> فيسبوك</a>  
-  </section>  
-</div>  <button id="toTop"><i class="fas fa-arrow-up"></i></button>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<script>  
-  const toTop = document.getElementById("toTop");  
-  window.onscroll = () => {  
-    if (document.documentElement.scrollTop > 300) toTop.style.display = "block";  
-    else toTop.style.display = "none";  
-  };  
-  toTop.onclick = () => { window.scrollTo({top:0,behavior:'smooth'}); };  
-  document.querySelectorAll("nav a").forEach(anchor => {  
-    anchor.addEventListener("click", e => {  
-      e.preventDefault();  
-      document.querySelector(anchor.getAttribute("href")).scrollIntoView({behavior:"smooth"});  
-    });  
-  });  
-</script>  </body>  
+  <!-- SEO -->
+  <title>محمد كعدي | مطوّر ويب Front-End ومصمم مواقع</title>
+  <meta name="description" content="مرحباً! أنا محمد كعدي، مطوّر ويب Front-End أعمل بتقنيات HTML, CSS, JavaScript وReact. اكتشف مهاراتي، مشاريعي، وتواصل معي للعمل على أفكار جديدة.">
+  <meta name="keywords" content="محمد كعدي, مطور ويب, مصمم مواقع, Front-End Developer, HTML, CSS, JavaScript, React, Git, GitHub, مشاريع ويب, سوريا">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="محمد كعدي | مطوّر ويب Front-End ومصمم مواقع">
+  <meta property="og:description" content="استعرض مهاراتي ومشاريعي وتواصل معي للعمل على أفكار جديدة.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mohammedkaadi.github.io/My-project/">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="محمد كعدي | مطوّر ويب Front-End ومصمم مواقع">
+  <meta name="twitter:description" content="استعرض مهاراتي ومشاريعي وتواصل معي للعمل على أفكار جديدة.">
+
+  <!-- Google Verification -->
+  <meta name="google-site-verification" content="VY-aa9fUJCOhNj0GeAzyz4ZRoEanyc6xnF7WrSdlS5U" />
+
+  <!-- خط Cairo -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family:'Cairo',sans-serif; background:#f5f7fa; color:#222; line-height:1.7;}
+    a {text-decoration:none;}
+
+    /* شريط التنقل */
+    nav {
+      position: fixed; top:0; left:0; right:0;
+      background: rgba(42,73,152,0.95); padding:15px 30px;
+      display:flex; justify-content:space-between; align-items:center;
+      z-index:1000; box-shadow:0 3px 12px rgba(0,0,0,0.2);
+    }
+    nav h2 {color:#fff; font-weight:700; font-size:1.3rem;}
+    nav ul {list-style:none; display:flex; gap:20px;}
+    nav ul li a {color:#fff; font-weight:600; transition:color 0.3s;}
+    nav ul li a:hover {color:#ffd700;}
+
+    header {
+      background: linear-gradient(120deg,#6a11cb,#2575fc);
+      color:#fff; padding:120px 20px 80px; text-align:center;
+      border-radius:0 0 50px 50px; margin-bottom:60px;
+    }
+    header h1 {font-size:2.8rem; margin-bottom:10px;}
+    header p {font-size:1.3rem; opacity:0.9;}
+
+    .container {max-width:1100px; margin:auto; padding:0 20px 60px;}
+    section {margin-bottom:60px;}
+    section h2 {font-size:2rem; color:#2575fc; margin-bottom:25px; border-bottom:4px solid #2575fc; display:inline-block; padding-bottom:8px; font-weight:700;}
+    #about p {font-size:1.25rem; color:#444; max-width:750px; margin:auto; text-align:center;}
+
+    /* المهارات */
+    #skills ul {list-style:none; display:flex; flex-wrap:wrap; justify-content:center; gap:18px;}
+    #skills ul li {background: linear-gradient(135deg, #2980b9, #3498db); color:#fff; padding:12px 28px; border-radius:40px; font-weight:700; font-size:1.1rem; box-shadow:0 6px 12px rgba(52,152,219,0.6); transition: transform 0.3s ease, box-shadow 0.3s ease;}
+    #skills ul li:hover {transform: scale(1.1); box-shadow:0 8px 20px rgba(41,128,185,0.9);}
+
+    /* شبكة المشاريع */
+    #projects .projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;}
+    #projects .project {background:#fff; border-radius:15px; padding:25px 20px; box-shadow:0 10px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;}
+    #projects .project:hover {transform:translateY(-8px) scale(1.02); box-shadow:0 15px 30px rgba(0,0,0,0.18);}
+    #projects .project h3 {color:#2980b9; font-size:1.6rem; margin-bottom:12px; font-weight:700;}
+    #projects .project p {color:#555; font-size:1rem; margin-bottom:18px;}
+    #projects .project a {color:#fff; background:#2575fc; text-decoration:none; font-weight:600; padding:10px 20px; border-radius:35px; box-shadow:0 6px 15px rgba(37,117,252,0.8); transition: background-color 0.3s ease; display:inline-flex; align-items:center; gap:8px;}
+    #projects .project a:hover {background-color:#1b4f99;}
+
+    /* تواصل */
+    #contact {text-align:center;}
+    #contact a {display:inline-flex; align-items:center; gap:10px; margin:12px; color:#2575fc; font-weight:700; text-decoration:none; border:2px solid #2575fc; padding:12px 25px; border-radius:40px; font-size:1.1rem; background-color:#fff; box-shadow:0 6px 20px rgba(37,117,252,0.3); transition: all 0.3s ease;}
+    #contact a:hover {background-color:#2575fc; color:#fff;}
+
+    /* زر العودة للأعلى */
+    #toTop {position:fixed; bottom:20px; left:20px; background:#2575fc; color:#fff; border:none; border-radius:50%; padding:12px 16px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.3); display:none; transition: background 0.3s; z-index:999;}
+    #toTop:hover {background:#1b4f99;}
+
+    @media (max-width: 768px) {
+      header h1 {font-size:2.2rem;}
+      header p {font-size:1.1rem;}
+      nav ul {gap:12px;}
+      nav h2 {font-size:1rem;}
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h2>محمد كعدي</h2>
+    <ul>
+      <li><a href="#about">نبذة</a></li>
+      <li><a href="#skills">مهاراتي</a></li>
+      <li><a href="#projects">مشاريعي</a></li>
+      <li><a href="#contact">تواصل</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>محمد كعدي</h1>
+    <p>مطور ويب - مصمم واجهات</p>
+  </header>
+
+  <div class="container">
+    <section id="about">
+      <h2>نبذة عني</h2>
+      <p>مرحبًا! أنا محمد كعدي، مطور ويب شغوف بابتكار حلول تقنية حديثة وتصميم تجارب مستخدم مميزة وسلسة عبر الويب.</p>
+    </section>
+
+    <section id="skills">
+      <h2>مهاراتي</h2>
+      <ul>
+        <li><i class="fab fa-html5"></i> HTML</li>
+        <li><i class="fab fa-css3-alt"></i> CSS</li>
+        <li><i class="fab fa-js"></i> JavaScript</li>
+        <li><i class="fab fa-react"></i> React</li>
+        <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>مشاريعي</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <h3>موقعي الشخصي</h3>
+          <p>موقع تعريفي بسيط يعرض ملفي الشخصي ومهاراتي ومشاريعي باستخدام HTML وCSS.</p>
+          <a href="https://mohammedkaadi.github.io/mohammedkaadi/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
+        </div>
+
+        <div class="project">
+          <h3>موقع مكتب هندسي</h3>
+          <p>موقع تعريفي لمكتب هندسي يتضمن عرض خدمات المكتب باستخدام تصميم حديث ومتجاوب.</p>
+          <a href="https://tariqzweun.github.io/engineering-office/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
+        </div>
+
+        <div class="project">
+          <h3>My Wallet</h3>
+          <p>موقع ويب يساعد على تتبع وإدارة الميزانية الشخصية بسهولة.</p>
+          <a href="https://mohammedkaadi.github.io/My-Wallet/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
+        </div>
+
+        <div class="project">
+          <h3>Starcola</h3>
+          <p>موقع لإدارة عمليات البيع والشراء لشركة ستار كولا.</p>
+          <a href="https://mohammedkaadi.github.io/Starcola" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
+        </div>
+
+        <div class="project">
+          <h3>موقع Fouad</h3>
+          <p>موقع تعريفي للطباخ فؤاد، يعرض خدماته وأعماله بطريقة عصرية وجذابة.</p>
+          <a href="https://cheffouad.github.io/Fouad/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
+        </div>
+
+        <div class="project">
+          <h3>موقع المهندسة Katia</h3>
+          <p>موقع يعرض خدمات المهندسة Katia في إدارة المشاريع الهندسية، مع عرض أعمالها ومشاريعها بطريقة احترافية وجذابة.</p>
+          <a href="https://eng-katia.github.io/katiakaadi/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>تواصل معي</h2>
+      <a href="https://wa.me/963980351186" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
+      <a href="https://www.facebook.com/share/16XuMVmWYp/" target="_blank"><i class="fab fa-facebook-f"></i> فيسبوك</a>
+    </section>
+  </div>
+
+  <button id="toTop"><i class="fas fa-arrow-up"></i></button>
+
+  <script>
+    const toTop = document.getElementById("toTop");
+    window.onscroll = () => {
+      if (document.documentElement.scrollTop > 300) toTop.style.display = "block";
+      else toTop.style.display = "none";
+    };
+    toTop.onclick = () => { window.scrollTo({top:0,behavior:'smooth'}); };
+    document.querySelectorAll("nav a").forEach(anchor => {
+      anchor.addEventListener("click", e => {
+        e.preventDefault();
+        document.querySelector(anchor.getAttribute("href")).scrollIntoView({behavior:"smooth"});
+      });
+    });
+  </script>
+</body>
 </html>
