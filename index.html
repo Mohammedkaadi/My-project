@@ -8,13 +8,13 @@
   <title>محمد كعدي | مطوّر ويب Front-End ومصمم مواقع</title>
   <meta name="description" content="مرحباً! أنا محمد كعدي، مطوّر ويب Front-End أعمل بتقنيات HTML, CSS, JavaScript وReact. اكتشف مهاراتي، مشاريعي، وتواصل معي للعمل على أفكار جديدة.">
   <meta name="keywords" content="محمد كعدي, مطور ويب, مصمم مواقع, Front-End Developer, HTML, CSS, JavaScript, React, Git, GitHub, مشاريع ويب, سوريا">
-  
+
   <!-- Open Graph -->
   <meta property="og:title" content="محمد كعدي | مطوّر ويب Front-End ومصمم مواقع">
   <meta property="og:description" content="استعرض مهاراتي ومشاريعي وتواصل معي للعمل على أفكار جديدة.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mohammedkaadi.github.io/My-project/">
-  
+
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="محمد كعدي | مطوّر ويب Front-End ومصمم مواقع">
@@ -28,6 +28,15 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
   <style>
     * {margin:0; padding:0; box-sizing:border-box;}
@@ -65,13 +74,67 @@
     #skills ul li:hover {transform: scale(1.1); box-shadow:0 8px 20px rgba(41,128,185,0.9);}
 
     /* شبكة المشاريع */
-    #projects .projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px;}
-    #projects .project {background:#fff; border-radius:15px; padding:25px 20px; box-shadow:0 10px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;}
-    #projects .project:hover {transform:translateY(-8px) scale(1.02); box-shadow:0 15px 30px rgba(0,0,0,0.18);}
-    #projects .project h3 {color:#2980b9; font-size:1.6rem; margin-bottom:12px; font-weight:700;}
+    #projects .projects-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:25px;
+    }
+    #projects .project {
+      background: linear-gradient(135deg,#ffffff,#f0f4ff);
+      border-radius:20px;
+      padding:25px 20px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.12);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    #projects .project::before {
+      content:"";
+      position:absolute;
+      top:0; left:0; width:100%; height:100%;
+      background:linear-gradient(135deg,rgba(37,117,252,0.08),rgba(106,17,203,0.08));
+      opacity:0; transition:opacity 0.4s;
+    }
+    #projects .project:hover::before {opacity:1;}
+    #projects .project:hover {
+      transform:translateY(-8px) scale(1.02);
+      box-shadow:0 15px 35px rgba(0,0,0,0.18);
+    }
+    #projects .project h3 {
+      color:#2575fc; font-size:1.5rem; margin-bottom:12px; font-weight:700;
+    }
     #projects .project p {color:#555; font-size:1rem; margin-bottom:18px;}
-    #projects .project a {color:#fff; background:#2575fc; text-decoration:none; font-weight:600; padding:10px 20px; border-radius:35px; box-shadow:0 6px 15px rgba(37,117,252,0.8); transition: background-color 0.3s ease; display:inline-flex; align-items:center; gap:8px;}
-    #projects .project a:hover {background-color:#1b4f99;}
+    #projects .project a {
+      color:#fff; background: linear-gradient(135deg,#2575fc,#6a11cb);
+      text-decoration:none; font-weight:600; padding:10px 20px;
+      border-radius:35px; box-shadow:0 6px 15px rgba(37,117,252,0.6);
+      transition:all 0.3s ease; display:inline-flex; align-items:center; gap:8px;
+      position: relative; overflow:hidden;
+    }
+    #projects .project a::after {
+      content: "";
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 200%; height: 200%;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      opacity: 0;
+      transition: transform 0.6s ease, opacity 0.6s ease;
+    }
+    #projects .project a:hover::after {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+    #projects .project a:hover {
+      background: linear-gradient(135deg,#1b4f99,#4a0fa3);
+      animation: pulse 1.2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.07); }
+      100% { transform: scale(1); }
+    }
 
     /* تواصل */
     #contact {text-align:center;}
@@ -105,14 +168,13 @@
     <h1>محمد كعدي</h1>
     <p>مطور ويب - مصمم واجهات</p>
   </header>
-
   <div class="container">
-    <section id="about">
+    <section id="about" data-aos="fade-up" data-aos-duration="1000">
       <h2>نبذة عني</h2>
-      <p>مرحبًا! أنا محمد كعدي، مطور ويب شغوف بابتكار حلول تقنية حديثة وتصميم تجارب مستخدم مميزة وسلسة عبر الويب.</p>
+      <p>مرحبًا! أنا محمد كعدي، مطور ويب شغوف بابتكار حلول تقنية حديثة وتصميم تجارب مستخدم مميزة وسلسة عبر الويب. أعمل باستخدام تقنيات مثل HTML، CSS، JavaScript وReact لتحقيق ذلك.</p>
     </section>
-
-    <section id="skills">
+    
+    <section id="skills" data-aos="fade-up" data-aos-duration="1000">
       <h2>مهاراتي</h2>
       <ul>
         <li><i class="fab fa-html5"></i> HTML</li>
@@ -122,8 +184,8 @@
         <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
       </ul>
     </section>
-
-    <section id="projects">
+    
+    <section id="projects" data-aos="fade-up" data-aos-duration="1000">
       <h2>مشاريعي</h2>
       <div class="projects-grid">
         <div class="project">
@@ -132,35 +194,30 @@
           <a href="https://mohammedkaadi.github.io/mohammedkaadi/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
         </div>
         <div class="project">
-  <h3>نظام حجز تصميم مواقع</h3>
-  <p>موقع إلكتروني يتيح للزبائن حجز تصميم مواقع احترافية بسهولة، مع لوحة إدارة متكاملة وتأكيد تلقائي عبر البريد الإلكتروني.</p>
-  <a href="https://hm-mohammed.infinityfree.me/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
-</div>
-
+          <h3>نظام حجز تصميم مواقع</h3>
+          <p>موقع إلكتروني يتيح للزبائن حجز تصميم مواقع احترافية بسهولة، مع لوحة إدارة متكاملة وتأكيد تلقائي عبر البريد الإلكتروني.</p>
+          <a href="https://hm-mohammed.infinityfree.me/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
+        </div>
         <div class="project">
           <h3>موقع مكتب هندسي</h3>
           <p>موقع تعريفي لمكتب هندسي يتضمن عرض خدمات المكتب باستخدام تصميم حديث ومتجاوب.</p>
           <a href="https://tariqzweun.github.io/engineering-office/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
         </div>
-
         <div class="project">
           <h3>My Wallet</h3>
           <p>موقع ويب يساعد على تتبع وإدارة الميزانية الشخصية بسهولة.</p>
           <a href="https://mohammedkaadi.github.io/My-Wallet/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
         </div>
-
         <div class="project">
           <h3>Starcola</h3>
           <p>موقع لإدارة عمليات البيع والشراء لشركة ستار كولا.</p>
           <a href="https://mohammedkaadi.github.io/Starcola" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
         </div>
-
         <div class="project">
           <h3>موقع Fouad</h3>
           <p>موقع تعريفي للطباخ فؤاد، يعرض خدماته وأعماله بطريقة عصرية وجذابة.</p>
           <a href="https://cheffouad.github.io/Fouad/" target="_blank"><i class="fas fa-external-link-alt"></i> زيارة المشروع</a>
         </div>
-
         <div class="project">
           <h3>موقع المهندسة Katia</h3>
           <p>موقع يعرض خدمات المهندسة Katia في إدارة المشاريع الهندسية، مع عرض أعمالها ومشاريعها بطريقة احترافية وجذابة.</p>
@@ -168,28 +225,66 @@
         </div>
       </div>
     </section>
-
-    <section id="contact">
+    
+    <section id="contact" data-aos="fade-up" data-aos-duration="1000">
       <h2>تواصل معي</h2>
       <a href="https://wa.me/963980351186" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
       <a href="https://www.facebook.com/share/16XuMVmWYp/" target="_blank"><i class="fab fa-facebook-f"></i> فيسبوك</a>
     </section>
   </div>
-
+  
   <button id="toTop"><i class="fas fa-arrow-up"></i></button>
-
+  
+  <!-- AOS Animation Script -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  
   <script>
+    AOS.init();
+  
     const toTop = document.getElementById("toTop");
     window.onscroll = () => {
       if (document.documentElement.scrollTop > 300) toTop.style.display = "block";
       else toTop.style.display = "none";
     };
     toTop.onclick = () => { window.scrollTo({top:0,behavior:'smooth'}); };
+  
     document.querySelectorAll("nav a").forEach(anchor => {
       anchor.addEventListener("click", e => {
         e.preventDefault();
         document.querySelector(anchor.getAttribute("href")).scrollIntoView({behavior:"smooth"});
       });
+    });
+  </script>
+  
+  <script>
+    // typewriter فقط لنبذة عني
+    function typeWriter(el, speed = 40, callback) {
+      const text = el.textContent;
+      el.textContent = '';
+      let i = 0;
+      function typing() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          setTimeout(typing, speed);
+        } else if (callback) {
+          callback();
+        }
+      }
+      typing();
+    }
+  
+    document.addEventListener('DOMContentLoaded', () => {
+      const aboutText = document.querySelector('#about p');
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            typeWriter(aboutText, 40);
+            obs.disconnect();
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(aboutText);
     });
   </script>
 </body>
