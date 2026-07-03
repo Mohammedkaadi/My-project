@@ -29,21 +29,97 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "محمد كعدي",
+    "@type": "ProfessionalService",
+    "name": "محمد كعدي - تصميم وبرمجة مواقع",
     "url": "https://mohammedkaadi.github.io/My-project/",
-    "jobTitle": "مطوّر ويب ومصمم مواقع",
-    "sameAs": [
-      "https://www.facebook.com/share/16XuMVmWYp/"
-    ],
-    "knowsAbout": ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "React", "SEO"],
+    "image": "https://mohammedkaadi.github.io/My-project/",
+    "priceRange": "$10-$150",
+    "areaServed": "SY",
+    "founder": {
+      "@type": "Person",
+      "name": "محمد كعدي",
+      "jobTitle": "مطوّر ويب ومصمم مواقع",
+      "knowsAbout": ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "React", "SEO"],
+      "sameAs": ["https://www.facebook.com/share/16XuMVmWYp/"]
+    },
+    "sameAs": ["https://www.facebook.com/share/16XuMVmWYp/"],
     "makesOffer": [
+      {
+        "@type": "Offer",
+        "name": "موقع تعريفي / بورتفوليو",
+        "price": "50",
+        "priceCurrency": "USD",
+        "description": "تصميم موقع تعريفي أو بورتفوليو من صفحة واحدة، متجاوب مع تحسين SEO أساسي."
+      },
+      {
+        "@type": "Offer",
+        "name": "موقع ديناميكي مع لوحة تحكم",
+        "price": "150",
+        "priceCurrency": "USD",
+        "description": "موقع كامل بلغة PHP وقاعدة بيانات MySQL مع لوحة تحكم إدارية وتحسين SEO متقدم."
+      },
+      {
+        "@type": "Offer",
+        "name": "نظام إدارة متكامل",
+        "priceCurrency": "USD",
+        "description": "أنظمة إدارة مخازن أو عملاء أو محتوى بواجهات عربية RTL كاملة."
+      },
       {
         "@type": "Offer",
         "name": "اشتراك الدعم الفني الشهري",
         "price": "10",
         "priceCurrency": "USD",
         "description": "خدمة دعم فني كاملة شهرياً تشمل الصيانة، حل المشاكل، والتحديثات."
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "كم تكلفة تصميم موقع ويب؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "تبدأ أسعار تصميم المواقع من 50$ للموقع التعريفي البسيط، وتصل إلى 150$ فأكثر للمواقع الديناميكية مع لوحة تحكم كاملة."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل تقدم دعم فني بعد تسليم الموقع؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم، أقدّم باقة اشتراك شهري بقيمة 10$ تشمل الصيانة الدورية وحل الأعطال البرمجية وتحديثات المحتوى."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "كم تستغرق مدة تنفيذ الموقع؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "الموقع التعريفي البسيط يُنجز خلال 2-4 أيام عمل، والمواقع الديناميكية تحتاج من أسبوع إلى ثلاثة أسابيع."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل تصمم مواقع بالعربية بالكامل مع دعم RTL؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "بالتأكيد، أغلب المشاريع مصممة بواجهات عربية RTL كاملة مع دعم تصدير البيانات بالعربية."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "هل تساعد في رفع الموقع على الاستضافة وربط الدومين؟",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "نعم، أتكفل بكامل عملية النشر والاستضافة وربط الدومين وتفعيل HTTPS وإعداد Google Search Console."
+        }
       }
     ]
   }
@@ -206,6 +282,15 @@
     #services .price-card a.cta:hover {background:linear-gradient(135deg,#1b4f99,#4a0fa3);}
     #services .price-note {text-align:center; margin-top:25px; color:#666; font-size:0.95rem;}
 
+    /* الأسئلة الشائعة */
+    #faq .faq-list {max-width:800px; margin:auto; display:flex; flex-direction:column; gap:16px;}
+    #faq .faq-item {
+      background:#fff; border-radius:14px; padding:20px 25px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.08); border-right:4px solid #2575fc;
+    }
+    #faq .faq-item h3 {color:#222; font-size:1.1rem; margin-bottom:8px; font-weight:700;}
+    #faq .faq-item p {color:#555; font-size:0.98rem;}
+
     /* زر العودة للأعلى */
     #toTop {position:fixed; bottom:20px; left:20px; background:#2575fc; color:#fff; border:none; border-radius:50%; padding:12px 16px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.3); display:none; transition: background 0.3s; z-index:999;}
     #toTop:hover {background:#1b4f99;}
@@ -229,6 +314,7 @@
       <li><a href="#about">نبذة</a></li>
       <li><a href="#skills">مهاراتي</a></li>
       <li><a href="#services">الخدمات والأسعار</a></li>
+      <li><a href="#faq">أسئلة شائعة</a></li>
       <li><a href="#projects">مشاريعي</a></li>
       <li><a href="#contact">تواصل</a></li>
     </ul>
@@ -271,7 +357,7 @@
             <li>ربط وسائل التواصل الاجتماعي</li>
             <li>استضافة ونشر على GitHub Pages</li>
           </ul>
-          <a class="cta" href="https://wa.me/963980351186" target="_blank">اطلب الخدمة</a>
+          <a class="cta whatsapp-btn" href="https://wa.me/963980351186" data-msg="مرحباً محمد، أنا مهتم بباقة (موقع تعريفي / بورتفوليو) بسعر 50$، بدي أعرف التفاصيل." target="_blank">اطلب الخدمة</a>
         </div>
 
         <div class="price-card featured">
@@ -285,7 +371,7 @@
             <li>تصميم متجاوب لجميع الشاشات</li>
             <li>تحسين SEO متقدم + Google Search Console</li>
           </ul>
-          <a class="cta" href="https://wa.me/963980351186" target="_blank">اطلب الخدمة</a>
+          <a class="cta whatsapp-btn" href="https://wa.me/963980351186" data-msg="مرحباً محمد، أنا مهتم بباقة (موقع ديناميكي + لوحة تحكم) بسعر 150$، بدي أعرف التفاصيل." target="_blank">اطلب الخدمة</a>
         </div>
 
         <div class="price-card">
@@ -298,7 +384,7 @@
             <li>ربط بقواعد بيانات وتقارير مخصصة</li>
             <li>استشارة مجانية لتحديد المتطلبات</li>
           </ul>
-          <a class="cta" href="https://wa.me/963980351186" target="_blank">اطلب استشارة</a>
+          <a class="cta whatsapp-btn" href="https://wa.me/963980351186" data-msg="مرحباً محمد، عندي مشروع بدو نظام إدارة متكامل، بدي استشارة عن التفاصيل والسعر." target="_blank">اطلب استشارة</a>
         </div>
 
         <div class="price-card">
@@ -311,11 +397,37 @@
             <li>متابعة الأداء وSEO شهرياً</li>
             <li>دعم مباشر عبر واتساب</li>
           </ul>
-          <a class="cta" href="https://wa.me/963980351186" target="_blank">اشترك الآن</a>
+          <a class="cta whatsapp-btn" href="https://wa.me/963980351186" data-msg="مرحباً محمد، بدي أشترك بباقة الدعم الفني الشهري (10$ شهرياً)، كيف نبدأ؟" target="_blank">اشترك الآن</a>
         </div>
 
       </div>
       <p class="price-note">* الأسعار تقريبية وقابلة للتفاوض حسب حجم المشروع ومتطلباته. تواصل معي لعرض سعر مخصص.</p>
+    </section>
+
+    <section id="faq" data-aos="fade-up" data-aos-duration="1000">
+      <h2>أسئلة شائعة</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>كم تكلفة تصميم موقع ويب؟</h3>
+          <p>تبدأ أسعار تصميم المواقع عندي من 50$ للموقع التعريفي البسيط، وتصل إلى 150$ فأكثر للمواقع الديناميكية مع لوحة تحكم كاملة (PHP وMySQL). السعر النهائي يعتمد على حجم المشروع وعدد الصفحات والمزايا المطلوبة، وأقدّم دائماً عرض سعر مجاني قبل البدء.</p>
+        </div>
+        <div class="faq-item">
+          <h3>هل تقدم دعم فني بعد تسليم الموقع؟</h3>
+          <p>نعم، أقدّم باقة اشتراك شهري بقيمة 10$ تشمل الصيانة الدورية، حل الأعطال البرمجية، تحديثات المحتوى البسيطة، ومتابعة أداء الموقع وSEO بشكل مستمر عبر تواصل مباشر على واتساب.</p>
+        </div>
+        <div class="faq-item">
+          <h3>كم تستغرق مدة تنفيذ الموقع؟</h3>
+          <p>الموقع التعريفي البسيط يُنجز خلال 2-4 أيام عمل، بينما المواقع الديناميكية مع لوحة تحكم وأنظمة إدارة تحتاج عادة من أسبوع إلى ثلاثة أسابيع حسب حجم المشروع.</p>
+        </div>
+        <div class="faq-item">
+          <h3>هل تصمم مواقع بالعربية بالكامل مع دعم الاتجاه من اليمين لليسار RTL؟</h3>
+          <p>بالتأكيد، أغلب مشاريعي مصممة بواجهات عربية RTL كاملة مع دعم تصدير البيانات بالعربية (Excel وPDF)، وهذا من أهم نقاط الخبرة اللي أشتغل فيها.</p>
+        </div>
+        <div class="faq-item">
+          <h3>هل تساعد في رفع الموقع على الاستضافة وربط الدومين؟</h3>
+          <p>نعم، أتكفل بكامل عملية النشر سواء على GitHub Pages، InfinityFree، أو Hostinger، بالإضافة إلى ربط الدومين وتفعيل شهادة HTTPS وإعداد Google Search Console لتحسين ظهور الموقع في نتائج البحث.</p>
+        </div>
+      </div>
     </section>
 
     <section id="projects" data-aos="fade-up" data-aos-duration="1000">
@@ -355,13 +467,24 @@
     
     <section id="contact" data-aos="fade-up" data-aos-duration="1000">
       <h2>تواصل معي</h2>
-      <a href="https://wa.me/963980351186" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
+      <a class="whatsapp-btn" href="https://wa.me/963980351186" data-msg="مرحباً محمد، شفت موقعك وحاب أتواصل معك بخصوص مشروع." target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
       <a href="https://www.facebook.com/share/16XuMVmWYp/" target="_blank"><i class="fab fa-facebook-f"></i> فيسبوك</a>
     </section>
   </div>
   
   <button id="toTop"><i class="fas fa-arrow-up"></i></button>
   
+  <script>
+    // بناء روابط واتساب مع رسالة جاهزة لكل زر
+    document.querySelectorAll('.whatsapp-btn').forEach(btn => {
+      const msg = btn.getAttribute('data-msg');
+      if (msg) {
+        const baseUrl = btn.getAttribute('href').split('?')[0];
+        btn.setAttribute('href', baseUrl + '?text=' + encodeURIComponent(msg));
+      }
+    });
+  </script>
+
   <!-- AOS Animation Script -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   
