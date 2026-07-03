@@ -147,10 +147,14 @@
 
     /* شريط التنقل */
     nav {
-      position: fixed; top:0; left:0; right:0;
+      position: sticky; top:0;
       background: rgba(42,73,152,0.95); padding:15px 30px;
       display:flex; justify-content:space-between; align-items:center;
-      z-index:1000; box-shadow:0 3px 12px rgba(0,0,0,0.2);
+      box-shadow:0 3px 12px rgba(0,0,0,0.2); z-index:1000;
+    }
+    #navToggle {
+      display:none; background:none; border:none; color:#fff;
+      font-size:1.5rem; cursor:pointer;
     }
     nav h2 {color:#fff; font-weight:700; font-size:1.3rem;}
     nav ul {list-style:none; display:flex; gap:20px;}
@@ -159,7 +163,7 @@
 
     header {
       background: linear-gradient(120deg,#6a11cb,#2575fc);
-      color:#fff; padding:120px 20px 80px; text-align:center;
+      color:#fff; padding:60px 20px 80px; text-align:center;
       border-radius:0 0 50px 50px; margin-bottom:60px;
     }
     header h1 {font-size:2.8rem; margin-bottom:10px;}
@@ -298,19 +302,26 @@
     @media (max-width: 768px) {
       header h1 {font-size:2.2rem;}
       header p {font-size:1.1rem;}
-      nav {flex-direction:column; gap:10px; padding:12px 15px;}
-      nav ul {gap:10px; flex-wrap:wrap; justify-content:center;}
-      nav ul li a {font-size:0.9rem;}
+      nav {padding:15px 20px; position:relative;}
+      #navToggle {display:block;}
+      nav ul {
+        display:none; flex-direction:column; gap:0;
+        position:absolute; top:100%; left:0; right:0;
+        background: rgb(42,73,152); box-shadow:0 8px 15px rgba(0,0,0,0.25);
+      }
+      nav ul.open {display:flex;}
+      nav ul li {width:100%;}
+      nav ul li a {display:block; padding:14px 20px; border-top:1px solid rgba(255,255,255,0.15);}
       nav h2 {font-size:1rem;}
-      body {padding-top:70px;}
-      header {padding-top:20px;}
+      header {padding-top:60px;}
     }
   </style>
 </head>
 <body>
-  <nav>
+  <nav id="mainNav">
     <h2>محمد كعدي</h2>
-    <ul>
+    <button id="navToggle" aria-label="فتح القائمة"><i class="fas fa-bars"></i></button>
+    <ul id="navLinks">
       <li><a href="#about">نبذة</a></li>
       <li><a href="#skills">مهاراتي</a></li>
       <li><a href="#services">الخدمات والأسعار</a></li>
@@ -474,6 +485,18 @@
   
   <button id="toTop"><i class="fas fa-arrow-up"></i></button>
   
+  <script>
+    // التحكم بقائمة الهمبرغر على الموبايل
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+  </script>
+
   <script>
     // بناء روابط واتساب مع رسالة جاهزة لكل زر
     document.querySelectorAll('.whatsapp-btn').forEach(btn => {
