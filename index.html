@@ -5,23 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- SEO -->
-  <title>محمد كعدي | مطوّر ويب Front-End ومصمم مواقع</title>
-  <meta name="description" content="مرحباً! أنا محمد كعدي، مطوّر ويب Front-End أعمل بتقنيات HTML, CSS, JavaScript وReact. اكتشف مهاراتي، مشاريعي، وتواصل معي للعمل على أفكار جديدة.">
-  <meta name="keywords" content="محمد كعدي, مطور ويب, مصمم مواقع, Front-End Developer, HTML, CSS, JavaScript, React, Git, GitHub, مشاريع ويب, سوريا">
+  <title>محمد كعدي | مطوّر ويب ومصمم مواقع - خدمات وباقات تصميم مواقع واشتراكات دعم فني</title>
+  <meta name="description" content="محمد كعدي، مطوّر ويب متكامل (PHP, MySQL, HTML, CSS, JavaScript, React) أقدم خدمات تصميم وبرمجة المواقع، لوحات التحكم، أنظمة إدارة المحتوى، تحسين محركات البحث SEO، واشتراك دعم فني شهري. تعرف على باقاتي وأسعاري وتواصل معي.">
+  <meta name="keywords" content="محمد كعدي, مطور ويب, مصمم مواقع, برمجة مواقع, تصميم موقع, أسعار تصميم مواقع, باقات تصميم مواقع, دعم فني شهري, PHP, MySQL, HTML, CSS, JavaScript, React, SEO, لوحة تحكم, سوريا, اللاذقية">
+  <link rel="canonical" href="https://mohammedkaadi.github.io/My-project/">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="محمد كعدي | مطوّر ويب Front-End ومصمم مواقع">
-  <meta property="og:description" content="استعرض مهاراتي ومشاريعي وتواصل معي للعمل على أفكار جديدة.">
+  <meta property="og:title" content="محمد كعدي | مطوّر ويب - خدمات، باقات وأسعار تصميم مواقع">
+  <meta property="og:description" content="خدمات برمجة وتصميم مواقع، لوحات تحكم، وSEO. باقات مرنة واشتراك دعم فني شهري. استعرض أعمالي وتواصل معي.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mohammedkaadi.github.io/My-project/">
+  <meta property="og:locale" content="ar_AR">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="محمد كعدي | مطوّر ويب Front-End ومصمم مواقع">
-  <meta name="twitter:description" content="استعرض مهاراتي ومشاريعي وتواصل معي للعمل على أفكار جديدة.">
+  <meta name="twitter:title" content="محمد كعدي | مطوّر ويب - خدمات وباقات تصميم مواقع">
+  <meta name="twitter:description" content="خدمات برمجة وتصميم مواقع، لوحات تحكم، وSEO. باقات مرنة واشتراك دعم فني شهري.">
 
   <!-- Google Verification -->
   <meta name="google-site-verification" content="VY-aa9fUJCOhNj0GeAzyz4ZRoEanyc6xnF7WrSdlS5U" />
+
+  <!-- Structured Data: Person + Services -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "محمد كعدي",
+    "url": "https://mohammedkaadi.github.io/My-project/",
+    "jobTitle": "مطوّر ويب ومصمم مواقع",
+    "sameAs": [
+      "https://www.facebook.com/share/16XuMVmWYp/"
+    ],
+    "knowsAbout": ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "React", "SEO"],
+    "makesOffer": [
+      {
+        "@type": "Offer",
+        "name": "اشتراك الدعم الفني الشهري",
+        "price": "10",
+        "priceCurrency": "USD",
+        "description": "خدمة دعم فني كاملة شهرياً تشمل الصيانة، حل المشاكل، والتحديثات."
+      }
+    ]
+  }
+  </script>
 
   <!-- خط Cairo -->
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
@@ -141,6 +167,45 @@
     #contact a {display:inline-flex; align-items:center; gap:10px; margin:12px; color:#2575fc; font-weight:700; text-decoration:none; border:2px solid #2575fc; padding:12px 25px; border-radius:40px; font-size:1.1rem; background-color:#fff; box-shadow:0 6px 20px rgba(37,117,252,0.3); transition: all 0.3s ease;}
     #contact a:hover {background-color:#2575fc; color:#fff;}
 
+    /* الخدمات والأسعار */
+    #services .services-intro {text-align:center; max-width:750px; margin:0 auto 35px; color:#444; font-size:1.15rem;}
+    #services .pricing-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+    }
+    #services .price-card {
+      background:#fff; border-radius:20px; padding:30px 25px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1); text-align:center;
+      display:flex; flex-direction:column; position:relative;
+      border:2px solid transparent; transition:transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    #services .price-card:hover {transform:translateY(-8px); box-shadow:0 15px 32px rgba(0,0,0,0.16);}
+    #services .price-card.featured {border-color:#2575fc; background:linear-gradient(160deg,#ffffff,#eef4ff);}
+    #services .price-card .badge {
+      position:absolute; top:-14px; left:50%; transform:translateX(-50%);
+      background:linear-gradient(135deg,#ffd700,#ffb300); color:#2a2a2a;
+      font-size:0.8rem; font-weight:700; padding:5px 16px; border-radius:20px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    }
+    #services .price-card h3 {color:#2575fc; font-size:1.35rem; margin-bottom:8px; font-weight:700;}
+    #services .price-card .price {font-size:2.1rem; font-weight:700; color:#222; margin:10px 0;}
+    #services .price-card .price span {font-size:1rem; font-weight:600; color:#777;}
+    #services .price-card ul {list-style:none; text-align:right; margin:15px 0; flex-grow:1;}
+    #services .price-card ul li {color:#444; font-size:0.98rem; margin-bottom:10px; padding-right:24px; position:relative;}
+    #services .price-card ul li::before {
+      content:"\f00c"; font-family:"Font Awesome 6 Free"; font-weight:900;
+      color:#27ae60; position:absolute; right:0; top:2px; font-size:0.85rem;
+    }
+    #services .price-card a.cta {
+      color:#fff; background:linear-gradient(135deg,#2575fc,#6a11cb);
+      text-decoration:none; font-weight:700; padding:12px 20px;
+      border-radius:35px; box-shadow:0 6px 15px rgba(37,117,252,0.5);
+      transition:all 0.3s ease; margin-top:10px;
+    }
+    #services .price-card a.cta:hover {background:linear-gradient(135deg,#1b4f99,#4a0fa3);}
+    #services .price-note {text-align:center; margin-top:25px; color:#666; font-size:0.95rem;}
+
     /* زر العودة للأعلى */
     #toTop {position:fixed; bottom:20px; left:20px; background:#2575fc; color:#fff; border:none; border-radius:50%; padding:12px 16px; cursor:pointer; box-shadow:0 4px 12px rgba(0,0,0,0.3); display:none; transition: background 0.3s; z-index:999;}
     #toTop:hover {background:#1b4f99;}
@@ -148,8 +213,12 @@
     @media (max-width: 768px) {
       header h1 {font-size:2.2rem;}
       header p {font-size:1.1rem;}
-      nav ul {gap:12px;}
+      nav {flex-direction:column; gap:10px; padding:12px 15px;}
+      nav ul {gap:10px; flex-wrap:wrap; justify-content:center;}
+      nav ul li a {font-size:0.9rem;}
       nav h2 {font-size:1rem;}
+      body {padding-top:70px;}
+      header {padding-top:20px;}
     }
   </style>
 </head>
@@ -159,6 +228,7 @@
     <ul>
       <li><a href="#about">نبذة</a></li>
       <li><a href="#skills">مهاراتي</a></li>
+      <li><a href="#services">الخدمات والأسعار</a></li>
       <li><a href="#projects">مشاريعي</a></li>
       <li><a href="#contact">تواصل</a></li>
     </ul>
@@ -185,6 +255,69 @@
       </ul>
     </section>
     
+    <section id="services" data-aos="fade-up" data-aos-duration="1000">
+      <h2>الخدمات والأسعار</h2>
+      <p class="services-intro">أقدّم خدمات برمجة وتصميم مواقع متكاملة تناسب المشاريع الصغيرة والمتوسطة، من الموقع التعريفي البسيط وحتى الأنظمة الإدارية الكاملة، مع إمكانية الاشتراك بخدمة الدعم الفني الشهري لضمان استمرارية عمل موقعك دون قلق.</p>
+
+      <div class="pricing-grid">
+
+        <div class="price-card">
+          <h3>موقع تعريفي / بورتفوليو</h3>
+          <div class="price">$50<span> بداية</span></div>
+          <ul>
+            <li>تصميم صفحة واحدة (One Page) متجاوب</li>
+            <li>HTML, CSS, JavaScript</li>
+            <li>تحسين أساسي لمحركات البحث SEO</li>
+            <li>ربط وسائل التواصل الاجتماعي</li>
+            <li>استضافة ونشر على GitHub Pages</li>
+          </ul>
+          <a class="cta" href="https://wa.me/963980351186" target="_blank">اطلب الخدمة</a>
+        </div>
+
+        <div class="price-card featured">
+          <span class="badge">الأكثر طلباً</span>
+          <h3>موقع ديناميكي + لوحة تحكم</h3>
+          <div class="price">$150<span> بداية</span></div>
+          <ul>
+            <li>موقع كامل بـ PHP وMySQL</li>
+            <li>لوحة تحكم إدارية لإدارة المحتوى</li>
+            <li>نظام تسجيل دخول وصلاحيات</li>
+            <li>تصميم متجاوب لجميع الشاشات</li>
+            <li>تحسين SEO متقدم + Google Search Console</li>
+          </ul>
+          <a class="cta" href="https://wa.me/963980351186" target="_blank">اطلب الخدمة</a>
+        </div>
+
+        <div class="price-card">
+          <h3>نظام إدارة متكامل</h3>
+          <div class="price">حسب الطلب</div>
+          <ul>
+            <li>أنظمة إدارة مخازن، عملاء، أو محتوى</li>
+            <li>تصدير بيانات Excel / PDF بدعم العربية</li>
+            <li>واجهات RTL كاملة</li>
+            <li>ربط بقواعد بيانات وتقارير مخصصة</li>
+            <li>استشارة مجانية لتحديد المتطلبات</li>
+          </ul>
+          <a class="cta" href="https://wa.me/963980351186" target="_blank">اطلب استشارة</a>
+        </div>
+
+        <div class="price-card">
+          <h3>باقة الدعم الفني الشهري</h3>
+          <div class="price">$10<span> / شهرياً</span></div>
+          <ul>
+            <li>صيانة دورية للموقع وقاعدة البيانات</li>
+            <li>حل المشاكل التقنية والأخطاء البرمجية</li>
+            <li>تحديثات محتوى بسيطة عند الحاجة</li>
+            <li>متابعة الأداء وSEO شهرياً</li>
+            <li>دعم مباشر عبر واتساب</li>
+          </ul>
+          <a class="cta" href="https://wa.me/963980351186" target="_blank">اشترك الآن</a>
+        </div>
+
+      </div>
+      <p class="price-note">* الأسعار تقريبية وقابلة للتفاوض حسب حجم المشروع ومتطلباته. تواصل معي لعرض سعر مخصص.</p>
+    </section>
+
     <section id="projects" data-aos="fade-up" data-aos-duration="1000">
       <h2>مشاريعي</h2>
       <div class="projects-grid">
